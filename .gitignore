@@ -1,0 +1,6 @@
+/.project
+/.idea/*
+/.bowerrc
+/bower.json
+/config
+/gulpfile
