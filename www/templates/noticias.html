@@ -3,10 +3,12 @@
     <button menu-toggle="left"class="button button-icon icon ion-navicon"></button>
   </ion-nav-buttons>
   <ion-content class="has-header">
-    <ion-list>
-      <ion-item ng-repeat="noticia in noticias" href="#/app/noticias/{{noticia.id}}">
-        {{noticia.title}}
-      </ion-item>
-    </ion-list>
+    <div class="list">
+        <a href="#/app/noticias/{{noticia.id}}">
+            <div class="item" ng-repeat="noticia in noticias">
+                {{noticia.title}}
+            </div>
+        </a>
+    </div>
   </ion-content>
 </ion-view>

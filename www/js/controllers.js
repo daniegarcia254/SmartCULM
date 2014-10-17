@@ -15,9 +15,6 @@ angular.module('starter.controllers', [])
   ];
 })
 
-.controller('NoticiasCtrl', function($scope, $stateParams) {
-})
-
 .controller('IncidenciasCtrl', function($scope) {
     $scope.incidencias = [
         { title: 'Incidencia 1', id: 1 },
@@ -27,8 +24,4 @@ angular.module('starter.controllers', [])
         { title: 'Incidencia 5', id: 5 },
         { title: 'Incidencia 6', id: 6 }
     ];
-})
-
-.controller('IncidenciasCtrl', function($scope, $stateParams) {
 });
-
