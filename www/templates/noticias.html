@@ -4,11 +4,21 @@
   </ion-nav-buttons>
   <ion-content class="has-header">
     <div class="list">
-        <a href="#/app/noticias/{{noticia.id}}">
+       <!-- <a href="#/app/noticias/{{noticia.id}}">
             <div class="item" ng-repeat="noticia in noticias">
                 {{noticia.title}}
             </div>
-        </a>
+        </a>-->
+        <div class="item" ng-repeat="data in mydata">
+            <a href="{{data.href}}">
+                {{data.info[0].descripcion}}
+            </a>
+        </div>
+        <!--<a class="item" href="data.info[0].uri" ng-repeat="data in mydata">
+            <div>
+                {{data.fecha + " - " + data.info[0].descripcion}}
+            </div>
+        </a>-->
     </div>
   </ion-content>
 </ion-view>

@@ -77,7 +77,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     })
 
     .state('app.noticia', {
-      url: "/noticias/:noticiaId",
+      url: "/noticias/:dataId",
       views: {
         'menuContent' :{
           templateUrl: "templates/noticia.html",
