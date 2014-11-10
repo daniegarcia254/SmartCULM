@@ -1,14 +1,13 @@
 <ion-view title="Incidencias">
-  <ion-nav-buttons side="left">
-    <button menu-toggle="left"class="button button-icon icon ion-navicon"></button>
-  </ion-nav-buttons>
-  <ion-content class="has-header">
-      <div class="list">
-          <a href="#/app/incidencias/incidencia">
-            <div class="item" ng-repeat="incidencia in incidencias">
-                {{incidencia.title}}
-            </div>
-          <a/>
-      </div>
-  </ion-content>
+    <ion-nav-buttons side="left">
+        <button menu-toggle="left"class="button button-icon icon ion-navicon"></button>
+    </ion-nav-buttons>
+    <ion-content class="has-header">
+        <div class="list">
+            <a class="item" ng-repeat="data in incidencias" href="http://www.google.com" target="_blank">
+                <div class="tituloIncidencia">{{data.title}}</div>
+                <div class="fechaIncidencia">07/11/2014</div>
+             </a>
+        </div>
+    </ion-content>
 </ion-view>

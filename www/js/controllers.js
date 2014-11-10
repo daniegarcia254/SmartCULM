@@ -4,21 +4,55 @@
 
     var URI = 'http://localhost:8080/com.gps.smartculm/rest/smartculm-service';
 
+    var noticias = [];
+
     app.controller('AppCtrl', function($scope, $ionicModal, $timeout) {
 
-    })
+    });
 
-    .controller('NoticiasCtrl', function($scope, $http) {
-            $scope.mydata = [{"fecha":"",
-                              "href":"javascript: void(0)",
-                              "info":[{"descripcion":"Cargando noticias...",
-                                       "uri":""}],
-                              "id":1,"nextId":2}];
+    app.factory('NoticiasService', function($http, $q, $timeout) {
 
-            $http.get(URI + '/noticias').then(function(result) {
-                console.log(result);
-                $scope.mydata = result.data;
+        var getNoticias = function() {
+
+            var deferred = $q.defer();
+            $timeout( function(){
+                $http.get(URI + '/noticias').then(function(result) {
+                    console.log(result);
+                    //$scope.mydata = result.data;
+                    deferred.resolve(result.data);
+                });
             });
+
+            return deferred.promise;
+        };
+
+        return {
+            getNoticias : getNoticias
+        };
+    });
+
+    app.controller('NoticiasCtrl', function($scope, $http, $ionicLoading, NoticiasService) {
+
+            $scope.loadingIndicator = $ionicLoading.show({
+                template: 'Cargando Noticias...',
+                animation: 'fade-in',
+                showBackdrop: false,
+                maxWidth: 200
+            });
+            NoticiasService.getNoticias().then(
+                function(data) {
+                    console.log(data);
+                    $scope.noticias = data;
+                    $ionicLoading.hide();
+                }
+            );
+
+            $scope.loadMore = function() {
+                var last = $scope.noticias[$scope.noticias.length - 1];
+                for (var i=1; i <= 5; i++){
+                    $scope.noticias.push(last + i);
+                }
+            };
     });
 
     app.controller('IncidenciasCtrl', function($scope) {
