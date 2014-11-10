@@ -33,6 +33,10 @@
 
     app.controller('NoticiasCtrl', function($scope, $http, $ionicLoading, NoticiasService) {
 
+            $scope.currentPage = 0;
+            $scope.pageSize = 6;
+
+
             $scope.loadingIndicator = $ionicLoading.show({
                 template: 'Cargando Noticias...',
                 animation: 'fade-in',
@@ -47,11 +51,8 @@
                 }
             );
 
-            $scope.loadMore = function() {
-                var last = $scope.noticias[$scope.noticias.length - 1];
-                for (var i=1; i <= 5; i++){
-                    $scope.noticias.push(last + i);
-                }
+            $scope.numberOfPages=function(){
+                return Math.ceil($scope.noticias.length/$scope.pageSize);
             };
     });
 
@@ -64,5 +65,14 @@
             { title: 'Incidencia 5', id: 5 },
             { title: 'Incidencia 6', id: 6 }
         ];
+    });
+
+    //We already have a limitTo filter built-in to angular,
+    //let's make a startFrom filter
+    app.filter('startFrom', function() {
+        return function(input, start) {
+            start = +start; //parse to int
+            return input.slice(start);
+        }
     });
 })();
