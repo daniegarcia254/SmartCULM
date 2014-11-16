@@ -2,28 +2,42 @@
 .fechaNoticia, .yearCalendar, .fechaIncidencia{
     float: right;
     padding-top: 10px;
+    margin-bottom: -5px;
 }
 .tituloNoticia, .tituloCalendar, .tituloIncidencia{
     font-weight: bold;
+    margin-top: -5px;
+    position: static;
+}
+.tituloNoticiaInicio{
+    margin-left: 20px;
 }
 
+.paginationButtons{
+   position: relative;
+   top: 20px;
+   text-align: center;
+   vertical-align: middle;
+}
 #previousButton{
-    position: fixed;
-    left: 25%;
-    bottom: -55px;
     width: 100px;
 }
 #pageNumber{
-    position: fixed;
-    left: 60%;
-    bottom: -45px;
     width: 100px;
     font-weight: bold;
     font-size: large;
+    padding: 0px 20px;
 }
 #nextButton{
-    position: fixed;
-    left: 75%;
-    bottom: -55px;
     width: 100px;
+}
+
+#searchNews{
+    padding-bottom: 10px;
+    padding-top: 10px;
+    text-align: center;
+}
+#searchInput{
+    max-width: 200px;
+    margin-left: 10px;
 }

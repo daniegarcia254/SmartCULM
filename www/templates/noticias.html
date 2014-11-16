@@ -3,25 +3,35 @@
     <button menu-toggle="left"class="button button-icon icon ion-navicon"></button>
   </ion-nav-buttons>
   <ion-content class="has-header">
+      <ion-refresher on-refresh="reloadNews()"
+                     pulling-text="Pull to refresh..."
+                     refreshing-text="Refreshing!"
+                     refreshing-icon="ion-loading-c">
+      </ion-refresher>
+      <div id="searchNews" ng-hide="currentPage!=0">
+          <label>Buscar noticia:</label>
+          <input class="class-form" ng-model="query" ng-bind="query" ng-change="filterNoticias(query)"
+                   id="searchInput" placeholder="Filter text">
+      </div>
       <div class="list">
               <div>
-              <a class="item" ng-repeat="noticia in noticias  | startFrom:currentPage*pageSize | limitTo:pageSize"
+              <a class="item" ng-repeat="noticia in filteredNoticias | startFrom:currentPage*pageSize | limitTo:pageSize"
                  href="{{noticia.listaNoticias[0].uri}}" target="_blank">
                   <div class="tituloNoticia">{{noticia.listaNoticias[0].descripcion}}</div>
                   <div class="fechaNoticia">{{noticia.fecha}}</div>
               </a>
               </div>
-              <div>
+              <div class="paginationButtons" ng-hide="hidePagBtns">
                   <button class="button button-positive" id="previousButton"
                       ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1">
                       Previous
                   </button>
-                  <span id="pageNumber">{{currentPage+1}}/{{numberOfPages()}}</span>
+                  <span id="pageNumber">{{currentPage+1}}/{{noOfPages}}</span>
                   <button class="button button-positive" id="nextButton"
-                          ng-disabled="currentPage >= noticias.length/pageSize - 1" ng-click="currentPage=currentPage+1">
+                          ng-disabled="noOfPages == 1 || (currentPage + 1) == noOfPages" ng-click="currentPage=currentPage+1">
                       Next
                   </button>
               </div>
-      </div>
+        </div>
   </ion-content>
 </ion-view>
