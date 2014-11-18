@@ -103,6 +103,7 @@
             $rootScope.hidePagBtns = false;
             $scope.currentPage = 0;
             $scope.noOfPages = $scope.numberOfPages();
+            $scope.refresherEnabled = true;
 
             $scope.clickButton = function() {
                 if ($scope.currentPage != 0) {
