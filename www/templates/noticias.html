@@ -18,7 +18,7 @@
       <div class="list">
               <div>
               <a class="item" ng-repeat="noticia in filteredNoticias | startFrom:currentPage*pageSize | limitTo:pageSize"
-                 ng-href="{{noticia.listaNoticias[0].uri}}">
+                 ng-href="{{noticia.listaNoticias[0].uri}}"  target="_blank">
                   <div class="tituloNoticia">{{noticia.listaNoticias[0].descripcion}}</div>
                   <div class="fechaNoticia">{{noticia.fecha}}</div>
               </a>
