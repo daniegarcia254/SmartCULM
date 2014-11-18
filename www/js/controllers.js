@@ -86,54 +86,36 @@
 
 
     app.controller('NoticiasCtrl', function($scope, $rootScope, $http, $filter, GetInfoService) {
-        
-            $scope.numberOfPages=function(){
-                return Math.ceil($rootScope.filteredNoticias.length/$scope.pageSize);
-            };
 
             $scope.filterNoticias =  function(query) {
                 $rootScope.filteredNoticias = $filter('filter')($rootScope.noticias, query);
-                $scope.noOfPages = $scope.numberOfPages();
             };
 
             $scope.query = "";
             $rootScope.noticias = noticias;
             $rootScope.filteredNoticias = noticias;
-            $scope.pageSize = 6;
-            $rootScope.hidePagBtns = false;
-            $scope.currentPage = 0;
-            $scope.noOfPages = $scope.numberOfPages();
+            $scope.pageSize = 10;
             $scope.refresherEnabled = true;
 
-            $scope.clickButton = function() {
-                if ($scope.currentPage != 0) {
-                    $scope.refresherEnabled = false;
-                    console.log($scope.refresherEnabled);
-                } else {
-                    $scope.refresherEnabled = true;
-                    console.log($scope.refresherEnabled);
-                }
+            $scope.reloadNews = function(){
+                GetInfoService.getNoticias().then(
+                    function (data) {
+                        $rootScope.noticias = data;
+                        $rootScope.filteredNoticias = data;
+                        $scope.query = "";
+                        $scope.pageSize=10;
+                        $scope.$broadcast('scroll.refreshComplete');
+                    }
+                );
             };
 
-            $scope.reloadNews = function(){
-                if ($scope.currentPage == 0) {
-                    GetInfoService.getNoticias().then(
-                        function (data) {
-                            $rootScope.noticias = data;
-                            $rootScope.filteredNoticias = data;
-                            $rootScope.hidePagBtns = false;
-                            $scope.noOfPages = $scope.numberOfPages();
-                            $scope.query = "";
-                            $scope.$broadcast('scroll.refreshComplete');
-                        }
-                    );
-                };
-            };
+            $scope.loadMoreNews = function(){
+                $scope.pageSize += 5;
+                $scope.$broadcast('scroll.infiniteScrollComplete');
+            }
 
             $scope.clearSearch = function(){
               $rootScope.filteredNoticias = noticias;
-              $rootScope.hidePagBtns = false;
-              $scope.noOfPages = $scope.numberOfPages();
             };
     });
 

@@ -2,14 +2,13 @@
   <ion-nav-buttons side="left">
     <button menu-toggle="left"class="button button-icon icon ion-navicon"></button>
   </ion-nav-buttons>
-  <ion-content class="has-bottom">
-      <ion-refresher on-refresh="reloadNews()"
+  <ion-content class="has-header">
+      <ion-refresher on-refresh="reloadNews();query=''"
                      pulling-text=""
                      refreshing-text="Recargando noticias"
-                     refreshing-icon="ion-loading-c"
-                     ng-if="refresherEnabled">
+                     refreshing-icon="ion-loading-c">
       </ion-refresher>
-      <ion-header-bar id="searchNews" ng-hide="currentPage!=0" class="item-input-inset bar-light">
+      <ion-header-bar id="searchNews" class="item-input-inset bar-light">
           <label class="item-input-wrapper">
               <i class="icon ion-ios7-search placeholder-icon"></i>
               <input type="search" class="class-form" ng-model="query" ng-change="filterNoticias(query)"
@@ -26,16 +25,10 @@
                   <div class="fechaNoticia">{{noticia.fecha}}</div>
               </a>
               </div>
-        </div>
+      </div>
+      <ion-infinite-scroll
+              on-infinite="loadMoreNews()"
+              distance="10%">
+      </ion-infinite-scroll>
   </ion-content>
-  <div class="fixed-outside" ng-hide="hidePagBtns">
-      <button class="button button-positive" id="previousButton"
-              ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1;clickButton()">
-          Previous
-      </button>
-      <button class="button button-positive" id="nextButton"
-              ng-disabled="noOfPages == 1 || (currentPage + 1) == noOfPages" ng-click="currentPage=currentPage+1;clickButton()">
-          Next
-      </button>
-  </div>
 </ion-view>
