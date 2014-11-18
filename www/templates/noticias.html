@@ -6,7 +6,8 @@
       <ion-refresher on-refresh="reloadNews()"
                      pulling-text=""
                      refreshing-text="Recargando noticias"
-                     refreshing-icon="ion-loading-c">
+                     refreshing-icon="ion-loading-c"
+                     ng-if="refresherEnabled">
       </ion-refresher>
       <ion-header-bar id="searchNews" ng-hide="currentPage!=0" class="item-input-inset bar-light">
           <label class="item-input-wrapper">
@@ -29,11 +30,11 @@
   </ion-content>
   <div class="fixed-outside" ng-hide="hidePagBtns">
       <button class="button button-positive" id="previousButton"
-              ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1">
+              ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1;clickButton()">
           Previous
       </button>
       <button class="button button-positive" id="nextButton"
-              ng-disabled="noOfPages == 1 || (currentPage + 1) == noOfPages" ng-click="currentPage=currentPage+1">
+              ng-disabled="noOfPages == 1 || (currentPage + 1) == noOfPages" ng-click="currentPage=currentPage+1;clickButton()">
           Next
       </button>
   </div>

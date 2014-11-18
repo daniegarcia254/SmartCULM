@@ -104,6 +104,16 @@
             $scope.currentPage = 0;
             $scope.noOfPages = $scope.numberOfPages();
 
+            $scope.clickButton = function() {
+                if ($scope.currentPage != 0) {
+                    $scope.refresherEnabled = false;
+                    console.log($scope.refresherEnabled);
+                } else {
+                    $scope.refresherEnabled = true;
+                    console.log($scope.refresherEnabled);
+                }
+            };
+
             $scope.reloadNews = function(){
                 if ($scope.currentPage == 0) {
                     GetInfoService.getNoticias().then(
