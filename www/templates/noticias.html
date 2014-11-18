@@ -2,35 +2,36 @@
   <ion-nav-buttons side="left">
     <button menu-toggle="left"class="button button-icon icon ion-navicon"></button>
   </ion-nav-buttons>
-  <ion-content class="has-header">
+  <ion-content class="has-bottom">
       <ion-refresher on-refresh="reloadNews()"
                      pulling-text=""
                      refreshing-text="Recargando noticias"
                      refreshing-icon="ion-loading-c">
       </ion-refresher>
-      <div id="searchNews" ng-hide="currentPage!=0">
-          <label class="ion-search"></label>
-          <input class="class-form" ng-model="query" ng-change="filterNoticias(query)"
+      <ion-header-bar id="searchNews" ng-hide="currentPage!=0" class="item-input-inset bar-light">
+          <label class="item-input-wrapper">
+              <i class="icon ion-ios7-search placeholder-icon"></i>
+              <input type="search" class="class-form" ng-model="query" ng-change="filterNoticias(query)"
                    id="searchInput" placeholder="Buscar noticia...">
-          <button class="ion-close-circled" ng-click="query='';clearSearch()"
-                  ng-show="query.length"></button>
-      </div>
+          </label>
+          <button class="button button-clear button-positive" ng-click="query='';clearSearch()"
+                  ng-show="query.length">Cancel</button>
+      </ion-header-bar>
       <div class="list">
               <div>
               <a class="item" ng-repeat="noticia in filteredNoticias | startFrom:currentPage*pageSize | limitTo:pageSize"
-                 href="#" onclick="window.open({{noticia.listaNoticias[0].uri}}, '_system')">
+                 href="{{noticia.listaNoticias[0].uri}}" target="_blank">
                   <div class="tituloNoticia">{{noticia.listaNoticias[0].descripcion}}</div>
                   <div class="fechaNoticia">{{noticia.fecha}}</div>
               </a>
               </div>
         </div>
   </ion-content>
-  <div class="bar bar-footer" ng-hide="hidePagBtns">
+  <div class="fixed-outside" ng-hide="hidePagBtns">
       <button class="button button-positive" id="previousButton"
               ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1">
           Previous
       </button>
-      <span id="pageNumber">{{currentPage+1}}/{{noOfPages}}</span>
       <button class="button button-positive" id="nextButton"
               ng-disabled="noOfPages == 1 || (currentPage + 1) == noOfPages" ng-click="currentPage=currentPage+1">
           Next

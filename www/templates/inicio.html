@@ -21,7 +21,7 @@
         </a>
         <div>
           <a class="item" ng-repeat="noticia in noticias | limitTo: 5"
-             href="#" onclick="window.open({{noticia.listaNoticias[0].uri}}, '_system')">
+             href="{{noticia.listaNoticias[0].uri}}" target="_blank">
             <div class="tituloNoticiaInicio">{{noticia.listaNoticias[0].descripcion}}</div>
           </a>
         </div>
