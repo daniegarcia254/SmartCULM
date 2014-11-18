@@ -18,7 +18,7 @@
       <div class="list">
               <div>
               <a class="item" ng-repeat="noticia in filteredNoticias | startFrom:currentPage*pageSize | limitTo:pageSize"
-                 ng-click="window.open('{{noticia.listaNoticias[0].uri}}', '_system');" ng-href="#">
+                 onclick="window.open({{noticia.listaNoticias[0].uri}}, '_system');" href="#">
                   <div class="tituloNoticia">{{noticia.listaNoticias[0].descripcion}}</div>
                   <div class="fechaNoticia">{{noticia.fecha}}</div>
               </a>
