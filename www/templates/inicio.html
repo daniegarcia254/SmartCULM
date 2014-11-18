@@ -7,7 +7,7 @@
     <!-- REFRESH PAGE -->
     <ion-refresher on-refresh="reloadInfo()"
                    pulling-text="Pull to refresh..."
-                   refreshing-text="Refreshing!"
+                   refreshing-text="Recargando"
                    refreshing-icon="ion-loading-c">
     </ion-refresher>
 
@@ -21,7 +21,7 @@
         </a>
         <div>
           <a class="item" ng-repeat="noticia in noticias | limitTo: 5"
-             href="{{noticia.listaNoticias[0].uri}}" target="_blank">
+             href="{{noticia.listaNoticias[0].uri}}" target="_self">
             <div class="tituloNoticiaInicio">{{noticia.listaNoticias[0].descripcion}}</div>
           </a>
         </div>

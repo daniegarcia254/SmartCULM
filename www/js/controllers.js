@@ -3,8 +3,8 @@
     var app = angular.module('starter.controllers',[]);
 
     //var URI = 'http://localhost:8080/com.gps.smartculm/rest/smartculm-service';
-    var URI = 'http://smartculm-danie.rhcloud.com/rest/smartculm-service';
-
+    var URI = 'http://smartculm-gps25.rhcloud.com/rest/smartculm-service';
+    
     var noticias = [];
     var incidencias = [];
 
@@ -52,16 +52,15 @@
 
             GetInfoService.getIncidencias().then(
                 function(data){
-                    console.log(data);
                     incidencias = data;
                 }
             );
             GetInfoService.getNoticias().then(
                 function (data) {
-                    console.log(data);
                     noticias = data;
-                    $scope.noticias = data;
+                    $rootScope.noticias = data;
                     $scope.incidencias = incidencias;
+                    $rootScope.filteredNoticias = data;
                     $ionicLoading.hide();
                 }
             );
@@ -70,16 +69,14 @@
         $scope.reloadInfo = function(){
             GetInfoService.getIncidencias().then(
                 function(data){
-                    console.log(data);
                     incidencias = data;
                     $scope.incidencias = data;
                 }
             );
             GetInfoService.getNoticias().then(
                 function (data) {
-                    console.log(data);
                     noticias = data;
-                    $scope.noticias = data;
+                    $rootScope.noticias = data;
                     $scope.$broadcast('scroll.refreshComplete');
                 }
             );
@@ -89,32 +86,30 @@
 
 
     app.controller('NoticiasCtrl', function($scope, $rootScope, $http, $filter, GetInfoService) {
+        
             $scope.numberOfPages=function(){
-                return Math.ceil($scope.filteredNoticias.length/$scope.pageSize);
+                return Math.ceil($rootScope.filteredNoticias.length/$scope.pageSize);
             };
 
             $scope.filterNoticias =  function(query) {
-                $scope.filteredNoticias = $filter('filter')($scope.noticias, query);
+                $rootScope.filteredNoticias = $filter('filter')($rootScope.noticias, query);
                 $scope.noOfPages = $scope.numberOfPages();
             };
 
             $scope.query = "";
-            $scope.noticias = noticias;
-            $scope.filteredNoticias = noticias;
+            $rootScope.noticias = noticias;
+            $rootScope.filteredNoticias = noticias;
             $scope.pageSize = 6;
             $rootScope.hidePagBtns = false;
             $scope.currentPage = 0;
             $scope.noOfPages = $scope.numberOfPages();
 
-
-
             $scope.reloadNews = function(){
                 if ($scope.currentPage == 0) {
                     GetInfoService.getNoticias().then(
                         function (data) {
-                            console.log(data);
-                            $scope.noticias = data;
-                            $scope.filteredNoticias = data;
+                            $rootScope.noticias = data;
+                            $rootScope.filteredNoticias = data;
                             $rootScope.hidePagBtns = false;
                             $scope.noOfPages = $scope.numberOfPages();
                             $scope.query = "";
@@ -122,6 +117,12 @@
                         }
                     );
                 };
+            };
+
+            $scope.clearSearch = function(){
+              $rootScope.filteredNoticias = noticias;
+              $rootScope.hidePagBtns = false;
+              $scope.noOfPages = $scope.numberOfPages();
             };
     });
 
