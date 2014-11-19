@@ -2,8 +2,8 @@
 
     var app = angular.module('starter.controllers',[]);
 
-    //var URI = 'http://localhost:8080/com.gps.smartculm/rest/smartculm-service';
-    var URI = 'http://smartculm-danie.rhcloud.com/rest/smartculm-service';
+    var URI = 'http://localhost:8080/com.gps.smartculm/rest/smartculm-service';
+    //var URI = 'http://smartculm-danie.rhcloud.com/rest/smartculm-service';
     
     var noticias = [];
     var incidencias = [];

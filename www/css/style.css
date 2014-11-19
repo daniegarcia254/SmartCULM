@@ -13,20 +13,6 @@
     margin-left: 20px;
 }
 
-.paginationButtons{
-   top: 20px;
-   text-align: center;
-   vertical-align: middle;
-}
-#previousButton{
-    margin-right: 50px;
-    width: 100px;
-}
-#nextButton{
-    margin-left: 50px;
-    width: 100px;
-}
-
 #searchNews{
     padding-bottom: 10px;
     padding-top: 10px;

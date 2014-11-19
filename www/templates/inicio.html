@@ -22,7 +22,7 @@
         <div>
           <a class="item" ng-repeat="noticia in noticias | limitTo: 5"
              href="{{noticia.listaNoticias[0].uri}}" target="_blank">
-            <div class="tituloNoticiaInicio">{{noticia.listaNoticias[0].descripcion}}</div>
+            <div class="tituloNoticiaInicio" ng-bind-html="noticia.listaNoticias[0].descripcion"></div>
           </a>
         </div>
       </div>
