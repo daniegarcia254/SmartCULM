@@ -1,9 +1,9 @@
 (function(){
-
     var app = angular.module('starter.controllers',[]);
-
-    var URI = 'http://localhost:8080/com.gps.smartculm/rest/smartculm-service';
+  
+    //var URI = 'http://localhost:8080/com.gps.smartculm/rest/smartculm-service';
     //var URI = 'http://smartculm-danie.rhcloud.com/rest/smartculm-service';
+    var URI = 'http://smartculm-gps25.rhcloud.com/rest/smartculm-service';
     
     var noticias = [];
     var incidencias = [];
@@ -43,11 +43,11 @@
     app.controller('AppCtrl', function($scope, $ionicModal, $timeout, $ionicLoading, $rootScope, GetInfoService) {
 
         if (noticias.length == 0) {
+          
             $scope.loadingIndicator = $ionicLoading.show({
-                template: 'Cargando Noticias e Incidencias',
+                templateUrl: 'templates/splash.html',
                 animation: 'fade-in',
-                showBackdrop: false,
-                maxWidth: 200
+                showBackdrop: false        
             });
 
             GetInfoService.getIncidencias().then(
@@ -59,7 +59,7 @@
                 function (data) {
                     noticias = data;
                     $rootScope.noticias = data;
-                    $scope.incidencias = incidencias;
+                    $rootScope.incidencias = incidencias;
                     $rootScope.filteredNoticias = data;
                     $ionicLoading.hide();
                 }
@@ -85,7 +85,7 @@
 
 
 
-    app.controller('NoticiasCtrl', function($scope, $rootScope, $http, $filter, GetInfoService) {
+    app.controller('NoticiasCtrl', function($scope, $rootScope, $stateParams, $http, $filter, GetInfoService) {
 
             $scope.filterNoticias =  function(query) {
                 $rootScope.filteredNoticias = $filter('filter')($rootScope.noticias, query);
@@ -93,9 +93,9 @@
 
             $scope.query = "";
             $rootScope.noticias = noticias;
+            $scope.noticia = noticias[$stateParams.noticiaId];
             $rootScope.filteredNoticias = noticias;
             $scope.pageSize = 10;
-            $scope.refresherEnabled = true;
 
             $scope.reloadNews = function(){
                 GetInfoService.getNoticias().then(
@@ -120,14 +120,14 @@
     });
 
 
-    app.controller('IncidenciasCtrl', function($scope, $rootScope, $http, $filter, GetInfoService) {
-
-        $scope.incidencias = incidencias;
+    app.controller('IncidenciasCtrl', function($scope, $rootScope, $stateParams, $http, $filter, GetInfoService) {
+        $rootScope.incidencias = incidencias;
+        $scope.incidencia = incidencias[$stateParams.incidenciaId];
 
         $scope.reloadIncidencias = function(){
             GetInfoService.getIncidencias().then(
                 function (data) {
-                    $scope.incidencias = data;
+                    $rootScope.incidencias = data;
                     $scope.$broadcast('scroll.refreshComplete');
                 }
             );

@@ -2791,14 +2791,14 @@ a.subdued {
     .bar.bar-stable.bar-footer {
       background-image: linear-gradient(180deg, #b2b2b2, #b2b2b2 50%, transparent 50%); }
   .bar.bar-positive {
-    border-color: #145fd7;
-    background-color: #4a87ee;
-    background-image: linear-gradient(0deg, #145fd7, #145fd7 50%, transparent 50%);
+    border-color: #002040;
+    background-color: #304A64;
+    background-image: linear-gradient(0deg, #002040, #002040 50%, transparent 50%);
     color: #fff; }
     .bar.bar-positive .title {
       color: #fff; }
     .bar.bar-positive.bar-footer {
-      background-image: linear-gradient(180deg, #145fd7, #145fd7 50%, transparent 50%); }
+      background-image: linear-gradient(180deg, #002040, #002040 50%, transparent 50%); }
   .bar.bar-calm {
     border-color: #1aacc3;
     background-color: #43cee6;
@@ -5828,7 +5828,8 @@ progress {
       border-color: transparent;
       background: none;
       box-shadow: none;
-      color: #4a87ee; }
+      color: #304A64;
+      font-size: 0.9em;    }
     .button.button-positive.button-icon {
       border-color: transparent;
       background: none; }

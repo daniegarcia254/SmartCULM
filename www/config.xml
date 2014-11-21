@@ -1,0 +1,12 @@
+<widget id="com.example.hello" version="0.0.1">
+        <name>SmartCulm</name>
+        <description>
+           Application for the CULM (Centro Universitario de Lenguas Modernas de Zaragoza)
+        </description>
+        <author email="smartculm-gps25">
+            Equipo 25 de Gestión de Proyecto Software (Unizar)
+        </author>
+        <content src="index.html" />
+        <access origin="*" />
+		<preference name="AutoHideSplashScreen" value="false" />
+</widget>

@@ -1,5 +1,16 @@
 <ion-view title="Incidencia">
-  <ion-content class="has-header">
-    <h1>Incidencia</h1>
+
+  <ion-nav-buttons class="nav-buttons" side="left">
+    <a id="backBtn" class="button icon-left ion-chevron-left button-clear button-dark"
+       href="#/app/incidencias">Atrás</a>
+    </a>
+  </ion-nav-buttons>
+	
+  <ion-content>
+    <div id="noticia-wrapper">
+      <h3>Detalles:</h3>
+      <p>{{incidencia.descripcion}}</p>
+    </div>
   </ion-content>
+  
 </ion-view>

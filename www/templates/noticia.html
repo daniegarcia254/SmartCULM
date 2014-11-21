@@ -1,6 +1,26 @@
-<ion-view title="Noticia">
-  <ion-content class="has-header">
-        <h3>Hola</h3>
-        <h1>{{data.info[0].descripcion}}</h1>
+<ion-view title="Noticia">  
+
+  <ion-nav-buttons class="nav-buttons" side="left">
+    <a id="backBtn" class="button icon-left ion-chevron-left button-clear button-dark"
+       href="#/app/noticias">Atrás</a>
+    </a>
+  </ion-nav-buttons>
+  
+  <ion-content>
+    <div id="noticia-wrapper">
+      <h3>Detalles:</h3>
+      <p>{{noticia.descripcion}}</p>
+      
+      <h3>Fecha:</h3>
+      <p>{{noticia.fecha | date: 'dd/MM/yyyy'}}</p>
+      
+      <p>
+        <a id="btn-noticias" class="button button-block button-stable"
+           href="{{noticia.uri}}" target="_blank">
+          Ver noticia en la web
+        </a>
+      </p>
+    </div>
   </ion-content>
+  
 </ion-view>

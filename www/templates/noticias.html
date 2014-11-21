@@ -2,12 +2,15 @@
   <ion-nav-buttons side="left">
     <button menu-toggle="left"class="button button-icon icon ion-navicon"></button>
   </ion-nav-buttons>
+  
   <ion-content class="has-header">
+    
       <ion-refresher on-refresh="reloadNews();query=''"
-                     pulling-text=""
-                     refreshing-text="Recargando noticias"
-                     refreshing-icon="ion-loading-c">
+                     pulling-text="Tirar para recargar"
+                     refreshing-text="Cargando noticias..."
+                     refreshing-icon="ion-loading-d">
       </ion-refresher>
+    
       <ion-header-bar id="searchNews" class="item-input-inset bar-light">
           <label class="item-input-wrapper">
               <i class="icon ion-ios7-search placeholder-icon"></i>
@@ -15,20 +18,23 @@
                    id="searchInput" placeholder="Buscar noticia...">
           </label>
           <button class="button button-clear button-positive" ng-click="query='';clearSearch()"
-                  ng-show="query.length">Cancel</button>
+                  ng-show="query.length">Cancelar</button>
       </ion-header-bar>
+    
       <div class="list">
               <div>
-              <a class="item" ng-repeat="noticia in filteredNoticias | startFrom:currentPage*pageSize | limitTo:pageSize"
-                 href="{{noticia.listaNoticias[0].uri}}" target="_blank">
-                  <div class="tituloNoticia" ng-bind-html="noticia.listaNoticias[0].descripcion"></div>
-                  <div class="fechaNoticia">{{noticia.fecha}}</div>
+              <a class="item noticia-item" ng-repeat="noticia in filteredNoticias | orderBy: '-fecha' | startFrom:currentPage*pageSize | limitTo:pageSize"
+                 href="#/app/noticias/{{noticia.id}}">
+                  <div class="tituloNoticia" ng-bind-html="noticia.descripcion"></div>
+                  <div class="fechaNoticia">{{noticia.fecha | date: 'dd/MM/yyyy'}}</div>
               </a>
               </div>
       </div>
+    
       <ion-infinite-scroll
               on-infinite="loadMoreNews()"
               distance="10%">
       </ion-infinite-scroll>
+    
   </ion-content>
 </ion-view>
