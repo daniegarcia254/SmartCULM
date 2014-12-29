@@ -1,9 +1,9 @@
 (function(){
     var app = angular.module('starter.controllers',[]);
   
-    var URI = 'http://localhost:8080/com.gps.smartculm/rest/smartculm-service';
+    //var URI = 'http://localhost:8080/com.gps.smartculm/rest/smartculm-service';
     //var URI = 'http://smartculm-danie.rhcloud.com/rest/smartculm-service';
-   // var URI = 'http://smartculm-gps25.rhcloud.com/rest/smartculm-service';
+    var URI = 'http://smartculm-gps25.rhcloud.com/rest/smartculm-service';
     var calendario_URI = "https://culm.unizar.es/sites/culm.unizar.es/files/users/adminwebuz/normativa/calendario.pdf";
 
     //Inicialización de variables globales donde se guardan los datos recogidos
