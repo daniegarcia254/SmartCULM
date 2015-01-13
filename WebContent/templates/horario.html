@@ -1,0 +1,50 @@
+<ion-view title="Horario">
+
+    <ion-nav-buttons class="nav-buttons" side="left">
+        <a id="backBtn" class="button icon-left ion-chevron-left button-clear button-dark"
+           href="#/app/horariosList" ng-click="resetHideHorVars()">Atrás</a>
+        </a>
+    </ion-nav-buttons>
+
+    <ion-content>
+      <div class="detalle-wrapper">
+        
+        <h3 class="titulo-detalle"><div ng-bind-html="horario.idioma"></div></h3>
+
+        <div ng-hide="profesorHorVacio">
+            <h4>Profesor:</h4>
+            <p>{{horario.profesor}}</p>
+        </div>
+
+        <div ng-hide="cursoHorVacio">
+            <h4>Curso:</h4>
+            <p>{{horario.curso}}</p>
+        </div>
+
+        <div ng-hide="horarioHorVacio">
+            <h4>Horario:</h4>
+            <p>{{horario.horario}}</p>
+        </div>
+
+        <div ng-hide="diasHorVacio">
+            <h4>Días:</h4>
+            <p>{{horario.dias}}</p>
+        </div>
+
+          <div ng-hide="aulaHorVacio">
+            <h4>Aula:</h4>
+            <p>{{horario.aula}}</p>
+        </div>
+
+        <div ng-hide="edificioHorVacio">
+            <h4>Edificio:</h4>
+            <p>{{horario.edificio}}</p>
+        </div>
+
+        <div ng-hide="tipoMatriculaHorVacio">
+            <h4>Tipo Matrícula:</h4>
+            <p>{{horario.tipoMatricula}}</p>
+        </div>
+      </div>
+    </ion-content>
+</ion-view>

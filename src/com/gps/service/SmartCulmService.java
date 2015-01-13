@@ -4,15 +4,21 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import com.google.gson.Gson;
+import com.gps.bd.minos.RepositorioCurso;
+import com.gps.bd.minos.RepositorioProfesores;
+import com.gps.dominio.Curso;
 import com.gps.dominio.Examen;
 import com.gps.dominio.Noticia;
 import com.gps.dominio.Incidencia;
+import com.gps.dominio.Profesor;
 import com.gps.scrapping.culm.Scrapper;
 
 
@@ -132,6 +138,80 @@ public class SmartCulmService {
 			return gson.toJson(examenesError);
 			
 		}
+	}
+	
+	@Path("/profesores")
+	@POST
+	@Consumes(MediaType.APPLICATION_JSON)
+	public String getProfesores(String json) {
+
+		List<Profesor> profesores = null; 
+		Gson gson = new Gson();
+		Profesor prof = gson.fromJson(json, Profesor.class);
+		RepositorioProfesores repoProf = new RepositorioProfesores(); 
+		repoProf.openDB(); 
+		String nombre = prof.getNombre();
+		String apellido1 = prof.getPrimerApellido();
+		String apellido2 = prof.getSegundoApellido();
+		String centro =	prof.getCentro();	
+		String campus = prof.getCampus(); 
+		String seccion = prof.getSeccion(); 
+
+		if (nombre.compareTo("all")==0){
+			profesores = repoProf.getAllProfesores();
+		} else {
+			if(nombre.length()==0){
+				nombre="";
+			}
+			if(apellido1.length()==0){
+				apellido1="";
+			}
+			if(apellido2.length()==0){
+				apellido2="";
+			}
+			if(centro.length()==0){
+				centro="";
+			}
+			if(campus.length()==0){
+				campus="";
+			}
+			if(seccion.length()==0){
+				seccion="";
+			}
+			profesores = repoProf.getProfesores(nombre, apellido1, apellido2, centro, campus, seccion);
+		}
+		repoProf.closeDB(); 
+		return gson.toJson(profesores);
+	}
+	
+	@Path("/horarios")
+	@POST
+	@Consumes(MediaType.APPLICATION_JSON)
+	public String getHorarios(String json) {
+		
+		Gson gson = new Gson();
+		Curso curso = gson.fromJson(json, Curso.class);
+		String response = "";
+		
+		if (curso != null){
+			RepositorioCurso rc = new RepositorioCurso();
+			rc.openDB();
+			
+			if (curso.getHorario().compareTo("-----------")==0){
+				curso.setHorario("");
+			}
+			
+			List<Curso> cursos = rc.getCursos(curso.getCentro(), curso.getCampus(), curso.getTipoMatricula(), 
+					curso.getSeccion(), curso.getProfesor(), curso.getNivel(), curso.getDias(),
+					curso.getAula(), curso.getEdificio(), curso.getHorario());
+			
+			gson = new Gson();
+			response = gson.toJson(cursos);
+		} else {
+			response = "[{}]";
+		}
+		
+		return response;
 	}
 
 } 

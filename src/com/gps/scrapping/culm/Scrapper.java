@@ -242,7 +242,7 @@ public class Scrapper {
 	 * @param prof
 	 * @return
 	 */
-	private Examen getExamen(Element elemExamen, boolean prof) {
+	private Examen getExamen(Element elemExamen, boolean esProfesor) {
 		
 		if (elemExamen.html().startsWith("<a href")){
 			Element ahref = elemExamen.getElementsByTag("a").get(0);
@@ -254,7 +254,7 @@ public class Scrapper {
 			
 			String asignatura = elemExamen.text();
 			
-			Examen examen = new Examen(prof, asignatura, uri);
+			Examen examen = new Examen(esProfesor, asignatura, uri);
 			
 			return examen;
 			

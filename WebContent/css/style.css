@@ -1,12 +1,25 @@
 /* Empty. Add your own CSS if you like */
 body, html {letter-spacing: 1px; font-size: 0.9em;}
 
-.list {letter-spacing: 0px;}
-
 input[type="search"]
 {
     font-size: 0.9em;
     letter-spacing: 1px;
+}
+
+input[type="range"]
+{
+    height: 65px;
+}
+
+hr {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border: none;
+  height: 1px;
+  /* Set the hr color */
+  color: #98999A; /* old IE */
+  background-color: #98999A; /* Modern Browsers */
 }
 
 .fechaNoticia, .yearCalendar, .fechaIncidencia{
@@ -53,12 +66,20 @@ input[type="search"]
 }
 
 /* Lista noticias */
-.fechaNoticia {
+.fechaNoticia, .tituloHorarioProfesor, .seccionProfesor {
     color: #98999A;
     font-size: 0.75em;
 }
 
-.tituloNoticia {
+.tituloHorarioProfesor, .seccionProfesor {
+  padding-top: 0px;
+  /* wrapping para titulos demasiado largos */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tituloNoticia, .tituloExamen, .input-label, .tituloHorario, .nombreProfesor, .tituloNoticia {
     color: #4D4D4D; /* color fuente */
     font-size: 0.9em; /* tamaño fuente */
     /* wrapping para titulos demasiado largos */
@@ -67,24 +88,65 @@ input[type="search"]
     text-overflow: ellipsis;
 }
 
-.noticia-item {
+.lista-item {
     padding: 20px 35px 15px 35px;
 }
 
-.incidencia { /* Padding top y bottom sobreescriben a .noticia-item */
+.incidencia, .examen, .informacion { /* Padding top y bottom sobreescriben a .lista-item */
   padding-top: 25px;
   padding-bottom: 25px;
 }
 
-.examen {
-    padding-top: 25px;
-    padding-bottom: 25px;
+.informacion {
+  cursor: pointer;
 }
+
+.informacionCampus {
+  padding: 18px 20px 18px 35px;
+  background: #F9F9F9;
+}
+
+.campus{
+    color: #4D4D4D; /* color fuente */
+    font-size: 0.8em; /* tamaño fuente */
+    /* wrapping para titulos demasiado largos */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-left: 25px;
+}
+
+.busquedaSinResultado {
+  text-align: center;
+  border-style: none;
+  margin-top: 30px;
+  color: #CCCCCC;
+}
+
+.tituloHorario, .busquedaSinResultado .nombreProfesor {
+  color: #CCCCCC;
+}
+
+.formulario-input {
+  padding: 8px 20px 8px 20px;
+}
+
+.formulario-input input {
+  color: #454545;
+  letter-spacing: 1px;
+}
+
+.item-select select {
+  color: #454545;
+  font-size: 0.75em; /* tamaño fuente */
+}
+
 /* Pagina Inicio */
 #menu-wrapper {
     padding-right: 55px;
     padding-left: 55px;
     padding-top: 25px;
+    padding-bottom: 30px;
 }
 
 #menu-wrapper a {
@@ -156,18 +218,48 @@ input[type="search"]
 }
 
 
-.noticia-wrapper {
+.detalle-wrapper {
+  margin: 0 auto;
   padding: 25px 40px 30px 40px;
+  text-align: justify;
+  max-width: 800px;
 }
 
-.noticia-wrapper h3 {
+.detalle-wrapper h3 {
   color: #454545;
   font-size: 1.6em;
 }
 
-.noticia-wrapper p {
+.titulo-detalle {
+  margin-bottom: 25px;
+}
+
+.titulo-primario {
+  margin-bottom: 2px;
+}
+
+.detalle-wrapper h4 {
+  color: #454545;
+  font-size: 1.25em;
+  font-weight: bold;
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+.detalle-wrapper h5 {
+  color: #98999A;
+  margin: 0;
+  margin-bottom: 20px;
+  font-size: 1.25em;
+}
+
+.detalle-wrapper p {
   color: #4D4D4D; /* color fuente */
-  text-align: justify;
+}
+
+.detalle-wrapper a {
+  color: #454545;
+  font-weight: bold;
 }
 	
 /* Logo */
@@ -186,23 +278,16 @@ input[type="search"]
     background: linear-gradient(to right, #002040 , #304A64);
 }
 
-.noticia-wrapper {
-    padding: 25px 40px 30px 40px;
-}
-
-.noticia-wrapper h3 {
-    color: #454545;
-    font-size: 1.6em;
-}
-
-.noticia-wrapper p {
-    color: #4D4D4D; /* color fuente */
-    text-align: justify;
+#btn-noticias, .btn-formulario {
+    margin: 0 auto;
+    margin-top: 40px;
+    font-size: 1.1em;
+    font-weight: bold;
+    width: 60%;
 }
 
 #btn-noticias {
-    margin-top: 40px;
-    font-size: 1.1em;
+  min-width: 210px;
 }
 
 #backBtn {
@@ -210,6 +295,10 @@ input[type="search"]
     font-size: .9em;
 }
 
+.btn-wrapper {
+  margin-top: 35px;
+  margin-bottom: 35px;
+}
 
 /* Splash */
 #splash-wrapper {
@@ -226,7 +315,7 @@ input[type="search"]
 }
 
 #loading-div {
-  margin-top: 50px;
+    margin-top: 50px;
 }
 
 /* POPUPS*/
@@ -250,6 +339,8 @@ input[type="search"]
 
 /* Pagina Inicio */
 #menu-wrapper {
+    margin: 0 auto;
+    max-width: 800px;
     padding-right: 55px;
     padding-left: 55px;
 }
@@ -273,4 +364,11 @@ input[type="search"]
     text-align: center;
 	padding-top: 20px;
 	padding-bottom: 20px;
+}
+.map {
+    margin: 0 auto;
+    width: 100%;
+    height: 250px;
+    margin-bottom: 20px;
+    margin-top: 30px;
 }

@@ -1,10 +1,17 @@
 <ion-view title="Examenes de Septiembre">
 
-    <ion-nav-buttons side="left">
-        <button menu-toggle="left"class="button button-icon icon ion-navicon"></button>
+    <ion-nav-buttons class="nav-buttons" side="left">
+        <a id="backBtn" class="button icon-left ion-chevron-left button-clear button-dark"
+           href="#/app/examenes">Atrás</a>
+        </a>
     </ion-nav-buttons>
 
     <ion-content class="has-header">
+        <ion-refresher on-refresh="reloadExSept();query=''"
+                       pulling-text="Tirar para recargar"
+                       refreshing-text="Cargando incidencias..."
+                       refreshing-icon="ion-loading-d">
+        </ion-refresher>
 
         <ion-header-bar id="searchNews" class="item-input-inset bar-light">
             <label class="item-input-wrapper">
@@ -18,10 +25,24 @@
 
         <div class="list">
             <div>
-                <a class="item noticia-item examen" ng-repeat="examen in filteredExSept"
-                   href="{{examen.URI}}" target="_blank">
+                <a class="item lista-item examen" ng-repeat="examen in filteredExSept"
+                   href="{{examen.URI}}" target="_blank"
+                   ng-hide="errorConexionExSept || examenesSeptiembre.length==0 || filteredExSept.length==0">
                     <div class="tituloExamen" ng-bind-html="examen.asignatura"></div>
                 </a>
+            </div>
+            <div class="item lista-item busquedaSinResultado" ng-show="errorConexionExSept">
+                <div class="tituloHorario">
+                    Error en la conexión<br><br>Recarga para reintentar
+                </div>
+            </div>
+            <div class="item lista-item busquedaSinResultado"
+                 ng-show="examenesSeptiembre.length==0 && !errorConexionExSept">
+                <div class="tituloHorario">Convocatorias no disponibles</div>
+            </div>
+            <div class="item lista-item busquedaSinResultado"
+                 ng-show="filteredExSept.length==0 && !errorConexionExSept && examenesSeptiembre.length>0">
+                <div class="tituloHorario">No hay convocatorias relacionadas<br><br>con "{{query}}"</div>
             </div>
         </div>
     </ion-content>

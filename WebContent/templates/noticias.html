@@ -22,13 +22,27 @@
       </ion-header-bar>
     
       <div class="list">
-              <div>
-              <a class="item noticia-item" ng-repeat="noticia in filteredNoticias | orderBy: '-fecha' | startFrom:currentPage*pageSize | limitTo:pageSize"
-                 href="#/app/noticias/{{noticia.id}}">
-                  <div class="tituloNoticia" ng-bind-html="noticia.descripcion"></div>
-                  <div class="fechaNoticia">{{noticia.fecha | date: 'dd/MM/yyyy'}}</div>
-              </a>
+         <div>
+            <a class="item lista-item" ng-repeat="noticia in filteredNoticias | orderBy: '-fecha' | limitTo:pageSize"
+               href="#/app/noticias/{{noticia.id}}"
+               ng-hide="errorConexionNoticias || noticias.length==0 && filteredNoticias.length==0">
+                <div class="tituloNoticia" ng-bind-html="noticia.descripcion"></div>
+                <div class="fechaNoticia">{{noticia.fecha | date: 'dd/MM/yyyy'}}</div>
+            </a>
+          </div>
+          <div class="item lista-item busquedaSinResultado" ng-show="errorConexionNoticias">
+              <div class="tituloHorario">
+                  Error en la conexión<br><br>Recarga para reintentar
               </div>
+          </div>
+          <div class="item lista-item busquedaSinResultado"
+               ng-show="noticias.length==0 && !errorConexionNoticias">
+              <div class="tituloHorario">No hay noticias</div>
+          </div>
+          <div class="item lista-item busquedaSinResultado"
+               ng-show="filteredNoticias.length==0 && !errorConexionNoticias && noticias.length>0">
+              <div class="tituloHorario">No hay noticias relacionadas<br><br>con "{{query}}"</div>
+          </div>
       </div>
     
       <ion-infinite-scroll

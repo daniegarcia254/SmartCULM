@@ -2,22 +2,22 @@ package com.gps.dominio;
 
 public class Examen {
 	
-	private boolean profesor;
+	private boolean esProfesor;
 	private String asignatura;
 	private String URI;
 
-	public Examen(boolean profesor, String asignatura, String URI){
-		this.profesor = profesor;
+	public Examen(boolean esProfesor, String asignatura, String URI){
+		this.esProfesor = esProfesor;
 		this.asignatura = asignatura;
 		this.URI = URI;
 	}
 	
-	public boolean getProfesor() {
-		return profesor;
+	public boolean getEsProfesor() {
+		return esProfesor;
 	}
 
-	public void setProfesor(boolean profesor) {
-		this.profesor = profesor;
+	public void setEsProfesor(boolean esProfesor) {
+		this.esProfesor = esProfesor;
 	}
 	
 	public String getAsignatura() {

@@ -1,8 +1,32 @@
-<ion-view title="Info">
+<ion-view title="Información">
   <ion-nav-buttons side="left">
     <button menu-toggle="left"class="button button-icon icon ion-navicon"></button>
   </ion-nav-buttons>
-  <ion-content class="has-header">
-    <h1>Información</h1>
+  <ion-content>
+    <div class="list">
+      <div slide-toggle="#accordion" class="item lista-item informacion">
+        <div class="tituloNoticia">Zaragoza</div>
+      </div>
+        
+      <!-- acordeon -->
+      <div id="accordion" class="slideable">
+        <a class="item lista-item informacionCampus"  href="#/app/info/zaragoza/sanfrancisco">
+            <div class="campus">Campus San Francisco</div></a>
+        <a class="item lista-item informacionCampus"  href="#/app/info/zaragoza/rioebro">
+          <div class="campus">Campus Río Ebro</div></a>
+        <a class="item lista-item informacionCampus"  href="#/app/info/zaragoza/granvia">
+          <div class="campus">Campus Gran Vía</div></a>
+        <a class="item lista-item informacionCampus"  href="#/app/info/zaragoza/veterinaria">
+          <div class="campus">Campus Veterinaria</div></a>
+        <!-- acordeon -->
+      </div>
+
+      <a class="item lista-item informacion" href="#/app/info/huesca">
+        <div class="tituloNoticia">Huesca</div>
+      </a>
+      <a class="item lista-item informacion" href="#/app/info/teruel">
+        <div class="tituloNoticia">Teruel</div>
+      </a>
+    </div>
   </ion-content>
 </ion-view>

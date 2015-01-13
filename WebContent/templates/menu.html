@@ -24,15 +24,18 @@
           <ion-item item-type="item-icon-left" nav-clear menu-close href="#/app/horarios">
             <i class="icon ion-clock"></i><span>Horarios</span>
           </ion-item>
+          <ion-item item-type="item-icon-left" nav-clear menu-close href="#/app/profesores">
+            <i class="icon ion-person-stalker"></i><span>Profesores</span>
+          </ion-item>
           <ion-item item-type="item-icon-left" nav-clear menu-close href="#/app/examenes">
-            <i class="icon ion-university"></i><span>Examenes</span>
+            <i class="icon ion-university"></i><span>Exámenes</span>
           </ion-item>
           <ion-item item-type="item-icon-left" nav-clear menu-close id="menuCalendarBttn"
                     href = ""
                     ng-click="calendarioPopup()">
             <i class="icon ion-calendar"></i><span>Calendario Académico</span>
           </ion-item>
-          <ion-item item-type="item-icon-left" nav-clear menu-close href="#/app/info">
+          <ion-item item-type="item-icon-left" nav-clear menu-close href="#/app/info" ng-click="notClickedZaragoza()">
             <i class="icon ion-information-circled"></i><span>Información</span>
           </ion-item>
         </ion-list>

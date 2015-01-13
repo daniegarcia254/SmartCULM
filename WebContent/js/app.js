@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers'])
+angular.module('starter', ['ionic', 'starter.controllers', 'angularSlideables'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -57,7 +57,28 @@ angular.module('starter', ['ionic', 'starter.controllers'])
           url: "/horarios",
           views: {
               'menuContent' :{
-                  templateUrl: "templates/horarios.html"
+                  templateUrl: "templates/formHorarios.html",
+                  controller: 'horariosCtrl'
+              }
+          }
+      })
+
+      .state('app.horariosList', {
+          url: "/horariosList",
+          views: {
+              'menuContent' :{
+                  templateUrl: "templates/horarios.html",
+                  controller: 'horariosCtrl'
+              }
+          }
+      })
+
+      .state('app.horario', {
+          url: "/horarios/:horarioDetalle",
+          views: {
+              'menuContent' :{
+                  templateUrl: "templates/horario.html",
+                  controller: 'horariosCtrl'
               }
           }
       })
@@ -70,6 +91,76 @@ angular.module('starter', ['ionic', 'starter.controllers'])
             }
         }
     })
+
+ /*     .state('app.infoZaragoza', {
+          url: "/info/zaragoza",
+          views: {
+              'menuContent' :{
+                  templateUrl: "templates/infoZaragoza.html",
+                  controller: "infoZaragozaCtrl"
+              }
+          }
+      })*/
+
+      .state('app.infoSanFrancisco', {
+          url: "/info/zaragoza/sanfrancisco",
+          views: {
+              'menuContent' :{
+                  templateUrl: "templates/infoSanFrancisco.html",
+                  controller: "infoSanFranciscoCtrl"
+              }
+          }
+      })
+  
+      .state('app.infoRioEbro', {
+          url: "/info/zaragoza/rioebro",
+          views: {
+              'menuContent' :{
+                  templateUrl: "templates/infoRioEbro.html",
+                  controller: "infoRioEbroCtrl"
+              }
+          }
+      })
+  
+      .state('app.infoGranVia', {
+          url: "/info/zaragoza/granvia",
+          views: {
+              'menuContent' :{
+                  templateUrl: "templates/infoGranVia.html",
+                  controller: "infoGranViaCtrl"
+              }
+          }
+      })
+  
+        .state('app.infoVeterinaria', {
+          url: "/info/zaragoza/veterinaria",
+          views: {
+              'menuContent' :{
+                  templateUrl: "templates/infoVeterinaria.html",
+                  controller: "infoVeterinariaCtrl"
+              }
+          }
+      })
+  
+      .state('app.infoHuesca', {
+          url: "/info/huesca",
+          views: {
+              'menuContent' :{
+                  templateUrl: "templates/infoHuesca.html",
+                  controller: "infoHuescaCtrl"
+              }
+          }
+      })
+
+      .state('app.infoTeruel', {
+          url: "/info/teruel",
+          views: {
+              'menuContent' :{
+                  templateUrl: "templates/infoTeruel.html",
+                  controller: "infoTeruelCtrl"
+              }
+          }
+      })
 
     .state('app.noticias', {
       url: "/noticias",
@@ -135,9 +226,36 @@ angular.module('starter', ['ionic', 'starter.controllers'])
                   controller: 'examenesSeptiembreCtrl'
               }
           }
-      });
-
-
+      })
+	  .state('app.profesores', {
+          url: "/profesores",
+          views: {
+              'menuContent' :{
+                  templateUrl: "templates/cuestionarioProfesores.html",
+                  controller: 'profesoresCtrl'
+              }
+          }
+      })
+	  
+	  .state('app.profesoresList', {
+			url: "/profesoresList",
+			views: {
+				'menuContent' :{
+					templateUrl: "templates/profesores.html",
+					controller: 'profesoresCtrl'
+				}
+			}
+        })
+	  
+	  .state('app.profesor', {
+			url: "/profesores/:profesorNombre",
+			views: {
+				'menuContent' :{
+					templateUrl: "templates/profesor.html",
+					controller: 'profesoresCtrl'
+				}
+			}
+		})
   
   // Si ninguno de los estados anteriores es llamado, la aplicación vuelve al inicio --> splash
         $urlRouterProvider.otherwise('/app/splash');

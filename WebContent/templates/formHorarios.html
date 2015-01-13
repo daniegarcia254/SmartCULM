@@ -1,0 +1,130 @@
+<ion-view title="Horarios">
+    <ion-nav-buttons side="left">
+        <button menu-toggle="left"class="button button-icon icon ion-navicon"></button>
+    </ion-nav-buttons>
+    <ion-content>
+        <div class="list">
+            <label class="item item-input item-select formulario-input">
+                <div class="input-label">
+                    Centro
+                </div>
+                <select name="Centro" ng-model="centro" >
+                    <option value=""></option>
+                    <option value="Zaragoza"selected>Zaragoza</option>
+                    <option value="Huesca">Huesca</option>
+                    <option value="Teruel">Teruel</option>
+                </select>
+            </label>
+            <label class="item item-input item-select formulario-input">
+                <div class="input-label">
+                    Campus
+                </div>
+                <select name="Campus" ng-model="campus" >
+                    <option value=""></option>
+                    <option value="Economia"selected>F.Economia</option>
+                    <option value="Huesca">Huesca</option>
+                    <option value="Rio Ebro-Actur">Rio Ebro-Actur</option>
+                    <option value="San Francisco">San Francisco</option>
+                    <option value="Teruel">Teruel</option>
+                    <option value="Veterinaria">Veterinaria</option>
+                </select>
+            </label>
+            <label class="item item-input item-select formulario-input">
+                <div class="input-label">
+                    Tipo Matrícula
+                </div>
+                <select name="Tipo Matrícula" ng-model="matricula" >
+                    <option value=""></option>
+                    <option value="AUTOAPRENDIZAJE"selected>CURSOS DE AUTOAPRENDIZAJE</option>
+                    <option value="ALEMAN VIRTUAL">EXÁMEN ALEMÁN VIRTUAL</option>
+                    <option value="CONVERSACION">CURSOS DE CONVERSACIÓN</option>
+                    <option value="FIRST CERTIFICATE IN ENGLISH">CURSO FIRST CERTIFICATE IN ENGLISH</option>
+                    <option value="ORDINARIA">CURSOS GENERALES</option>
+                    <option value="VERANO JULIO">CURSOS VERANO JULIO</option>
+                    <option value="VERANO SEPTIEMBRE">CURSOS VERANO SEPTIEMBRE</option>
+                </select>
+            </label>
+            <label class="item item-input item-select formulario-input">
+                <div class="input-label">
+                    Sección
+                </div>
+                <select name="Seccion" ng-model="seccion" >
+                    <option value=""></option>
+                    <option ng-repeat="secc in seccionTodos" value="{{secc}}">
+                        {{secc}}
+                    </option>
+                </select>
+            </label>
+            <label class="item item-input item-select formulario-input">
+                <div class="input-label">
+                    Profesor
+                </div>
+                <select name="Profesor" ng-model="profesor" >
+                    <option value=""></option>
+                    <option ng-repeat="prof in profesoresTodos"
+                            value="{{prof.nombre}}-{{prof.primerApellido}}-{{prof.segundoApellido}}">
+                       {{prof.nombre}} {{prof.primerApellido}} {{prof.segundoApellido}}
+                    </option>
+                </select>
+            </label>
+            <label class="item item-input item-select formulario-input">
+                <div class="input-label">
+                    Nivel
+                </div>
+                <select name="Nivel" ng-model="nivel" >
+                    <option value=""></option>
+                    <option value="primero"selected>Primero</option>
+                    <option value="segundo">Segundo</option>
+                    <option value="tercero">Tercero</option>
+                    <option value="cuarto">Cuarto</option>
+                    <option value="quinto">Quinto</option>
+                    <option value="sexto">Sexto</option>
+                    <option value="iniciacion">Iniciación - A1</option>
+                    <option value="preintermedio-a2">Preintermedio - A2</option>
+                    <option value="intermedio-b1">Intermedio - B1</option>
+                    <option value="superior">Intermedio Superior - B2</option>
+                    <option value="avanzado-c1">Avanzado - C1</option>
+                </select>
+            </label>
+            <label class="item item-input item-select formulario-input">
+                <div class="input-label">
+                    Días
+                </div>
+                <select name="Dias" ng-model="dias" >
+                    <option value=""></option>
+                    <option value="Lunes"selected>Lunes</option>
+                    <option value="Martes">Martes</option>
+                    <option value="Miercoles">Miercoles</option>
+                    <option value="Jueves">Jueves</option>
+                    <option value="Viernes">Viernes</option>
+                    <option value="L-X">Lunes - Miércoles</option>
+                    <option value="M-J">Martes - Jueves</option>
+                </select>
+            </label>
+            <label class="item item-input item-select formulario-input">
+                <div class="input-label">
+									Edificio
+                </div>
+                <select name="Edificio" ng-model="edificio" >
+                    <option value=""></option>
+                    <option ng-repeat="edif in edificioTodos" value="{{edif}}">
+                        {{edif}}
+                    </option>
+                </select>
+            </label>
+            <div class="item range range-positive" ng-controller = "horarioRangeCtrl">
+                <i class="icon ion-ios7-time-outline"></i>
+                <input type='range' ng-model='horarioModelValue' min='{{min}}' max='{{max}}' step='1'>
+                <i class="icon ion-ios7-time"></i>
+                {{horarioValue}}
+            </div>
+            <div class="btn-wrapper">
+              <a class="button button-block button-stable btn-formulario"
+                 ng-click="cleanHorarios();search(centro, campus, matricula, seccion, profesor, nivel, dias, aula, edificio)"
+                 href="#/app/horariosList">
+                  Buscar
+              </a>
+            </div>            
+        </div>
+    </ion-content>
+</ion-view>
