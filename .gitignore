@@ -1,6 +1,12 @@
-/.project
-/.idea/*
-/.bowerrc
-/bower.json
-/config
-/gulpfile
+# Specifies intentionally untracked files to ignore when using Git
+# http://git-scm.com/docs/gitignore
+
+node_modules/
+platforms/
+.idea/
+build/
+hooks/
+node_modules/
+projectFilesBackup/
+.bowerrc
+bower.json
