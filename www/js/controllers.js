@@ -233,7 +233,7 @@
             var confirmPopup = $ionicPopup.confirm({
                 template: '<div id="texto-popup"><strong>¿Desea descargar<br/>' +
                 'el Calendario Académico?</strong><br/></div>' +
-                '<img id="pdflogo" src="/img/pdf-icon.png"/>',
+                '<img id="pdflogo" src="img/pdf-icon.png"/>',
                 okText: 'SÍ',
                 cancelText: 'NO'
             });
