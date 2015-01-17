@@ -2,7 +2,7 @@
 
   <ion-nav-buttons class="nav-buttons" side="left">
     <a id="backBtn" class="button icon-left ion-chevron-left button-clear button-dark"
-       href="#/app/noticias">Atr·s</a>
+       href="#/app/noticias">Atr√°s</a>
     </a>
   </ion-nav-buttons>
   
@@ -15,22 +15,12 @@
       <p>{{noticia.fecha | date: 'dd/MM/yyyy'}}</p>
       
       <p>
-        <!--<a id="btn-noticias" class="button button-block button-stable"
-           href="{{noticia.uri}}" target="_blank">-->
         <a id="btn-noticias" class="button button-block button-stable"
-           onclick=openURL(noticia.uri)>
+           href="#" onclick="window.open(noticia.uri, '_system');">
           Ver noticia en la web
         </a>
       </p>
     </div>
   </ion-content>
-
-  <script type="text/javascript">
-    function openURL(uri)
-    {
-      var shell = new ActiveXObject("WScript.Shell");
-      shell.run(uri);
-    }
-  </script>
-
+  
 </ion-view>

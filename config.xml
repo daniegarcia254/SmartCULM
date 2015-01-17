@@ -50,6 +50,9 @@
     <preference name="DisallowOverscroll" 		  value="true"/>
   	<preference name="BackupWebStorage" 		  value="none"/>
     
+     <!-- Core plugins -->
+    <gap:plugin name="org.apache.cordova.inappbrowser" />
+    
     <!-- Define app icon for each platform. -->
     <icon src="img/apk_icon.png" />
     
