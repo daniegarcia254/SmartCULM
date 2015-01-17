@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <widget id="com.ionicframework.myapp377389" 
 		version="0.0.1" 
 		xmlns="http://www.w3.org/ns/widgets" 
@@ -7,10 +7,7 @@
 	<name>SmartCULM</name>
   
 	<description>
-        An application oriented for mobile devices.
-        Allows to access to all the basic and most important info of the
-        CULM (Centro Universitario de Lenguas Modernas de Zaragoza): noticias,
-        incidencias, horarios, profesores, calendario académico, información...
+        An application oriented for mobile devices. Allows to access to all the basic and most important info of the CULM (Centro Universitario de Lenguas Modernas de Zaragoza): noticias, incidencias, horarios, profesores, calendario académico, información...
     </description>
     
   	<author email="gps_e25@googlegroups.com">
@@ -51,7 +48,7 @@
   	<preference name="BackupWebStorage" 		  value="none"/>
     
      <!-- Core plugins -->
-    <gap:plugin name="org.apache.cordova.inappbrowser" />
+    <!--  --><gap:plugin name="org.apache.cordova.inappbrowser" />-->
     
     <!-- Define app icon for each platform. -->
     <icon src="img/apk_icon.png" />
@@ -59,4 +56,7 @@
   	<feature name="StatusBar">
   		<param name="ios-package" value="CDVStatusBar" onload="true"/>
   	</feature>
+  	<feature name="InAppBrowser">
+    	<param name="android-package" value="org.apache.cordova.inappbrowser.InAppBrowser" />
+	</feature>
 </widget>
