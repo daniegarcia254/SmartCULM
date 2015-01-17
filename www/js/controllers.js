@@ -177,10 +177,6 @@
 			getProfesores: getProfesores,
             getHorarios: getHorarios
         };
-        
-        $rootScope.openLink = function(link){
-        	$window.open(link, '_system', 'location=yes,toolbar=yes');
-        }
     });
 
 
@@ -288,6 +284,10 @@
 
         $scope.notClickedZaragoza = function(){
             $rootScope.clickZaragoza = false;
+        }
+        
+        $rootScope.openLink = function(link){
+        	$window.open(link, '_system', 'location=yes');
         }
     });
 
