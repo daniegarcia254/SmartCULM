@@ -27,7 +27,7 @@
         following tag to your config.xml; you will still have the INTERNET
         permission on your app, which PhoneGap requires.
     -->
-    <preference name="permissions"                value="none"/>
+    <!--<preference name="permissions"                value="none"/> -->
     
     <!-- Customize your app and platform with the preference element. -->
     <preference name="orientation"                value="default" />        <!-- all: default means both landscape and portrait are enabled -->
@@ -49,17 +49,9 @@
   	<preference name="BackupWebStorage" 		  value="none"/>
     
      <!-- Core plugins -->
-    <!--<gap:plugin name="org.apache.cordova.inappbrowser" />-->
     <gap:plugin name="org.apache.cordova.inappbrowser" />
     <gap:plugin name="org.apache.cordova.device" />
     
     <!-- Define app icon for each platform. -->
     <icon src="img/apk_icon.png" />
-    
-  	<feature name="StatusBar">
-  		<param name="ios-package" value="CDVStatusBar" onload="true"/>
-  	</feature>
-  	<!--<feature name="InAppBrowser">
-    	<param name="android-package" value="org.apache.cordova.inappbrowser.InAppBrowser" />
-	</feature>-->
 </widget>
