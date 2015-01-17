@@ -51,7 +51,7 @@
   	<preference name="BackupWebStorage" 		  value="none"/>
     
     <!-- Define app icon for each platform. -->
-    <!-- <icon src="icon.png" />-->
+    <icon src="img/apk_icon.png" />
     
   	<feature name="StatusBar">
   		<param name="ios-package" value="CDVStatusBar" onload="true"/>
