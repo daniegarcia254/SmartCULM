@@ -287,7 +287,7 @@
         }
         
         $rootScope.openLink = function(link){
-        	$window.open(link, '_system', 'location=yes');
+        	$window.open(link, '_system', 'location=yes,toolbar=yes');
         }
     });
 
