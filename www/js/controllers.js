@@ -183,7 +183,8 @@
     /**********************************************************************
      * AppCtrl: Controlador principal de la aplicación.
      ***********************************************************************/
-    app.controller('AppCtrl', function($scope, $ionicModal, $timeout, $ionicPopup, $window, $rootScope, GetInfoService, $state) {
+    app.controller('AppCtrl', function($scope, $ionicModal, $timeout, $ionicPopup, 
+    		$window, $rootScope, GetInfoService, $state, $location) {
 
         //Si no hay datos y no hay error de conexión --> Realiza las llamadas al web service
         if (!$rootScope.primerAcceso) {
@@ -286,7 +287,10 @@
         }
         
         $rootScope.openLink = function(link){
-        	$window.open(link, '_system', 'location=yes');
+        	var ref = $window.open(link, '_system', 'location=yes');
+        	ref.addEventListener('exit', function(event) {
+        		 $location.path("/"); 
+        	} );
         }
     });
 
