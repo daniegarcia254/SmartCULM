@@ -288,9 +288,6 @@
         
         $rootScope.openLink = function(link){
         	var ref = $window.open(link, '_system', 'location=yes');
-        	ref.addEventListener('exit', function(event) {
-        		 $state.go('home'); 
-        	} );
         }
     });
 

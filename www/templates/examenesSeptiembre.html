@@ -26,7 +26,7 @@
         <div class="list">
             <div>
                 <a class="item lista-item examen" ng-repeat="examen in filteredExSept"
-                   href="#" onclick="window.open(examen.URI, '_system');"
+                   ng-click="openLink(examen.URI)"
                    ng-hide="errorConexionExSept || examenesSeptiembre.length==0 || filteredExSept.length==0">
                     <div class="tituloExamen" ng-bind-html="examen.asignatura"></div>
                 </a>
