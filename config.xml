@@ -50,7 +50,8 @@
     
      <!-- Core plugins -->
     <!--<gap:plugin name="org.apache.cordova.inappbrowser" />-->
-    <gap:plugin name="org.li8.inappbrowser" version="0.1" />
+    <gap:plugin name="org.apache.cordova.inappbrowser" />
+    <gap:plugin name="org.apache.cordova.device" />
     
     <!-- Define app icon for each platform. -->
     <icon src="img/apk_icon.png" />

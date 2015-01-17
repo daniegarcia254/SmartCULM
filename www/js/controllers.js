@@ -284,6 +284,10 @@
         $scope.notClickedZaragoza = function(){
             $rootScope.clickZaragoza = false;
         }
+        
+        $rootScope.openLink = function(link){
+        	$window.open(link, '_blank', 'location=yes');
+        }
     });
 
 
