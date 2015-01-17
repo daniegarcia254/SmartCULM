@@ -23,6 +23,7 @@
     
     <content src="index.html"/>
   	<access origin="*"/>
+  	<gap:platform name="android" />
     
     <!--
         If you do not want any permissions to be added to your app, add the
