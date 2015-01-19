@@ -285,7 +285,7 @@
         $scope.notClickedZaragoza = function(){
             $rootScope.clickZaragoza = false;
         }
-        
+
         jQuery(document).delegate('.external', 'click', function (e) {
             window.open(e.target.href, '_system', 'toolbar=yes');
             e.preventDefault();
