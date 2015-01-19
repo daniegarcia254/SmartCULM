@@ -286,9 +286,10 @@
             $rootScope.clickZaragoza = false;
         }
         
-        $rootScope.openLink = function(link){
-        	$window.open(link, '_system', 'location=yes,toolbar=yes');
-        }
+        jQuery(document).delegate('.external', 'click', function (e) {
+            window.open(e.target.href, '_system', 'toolbar=yes');
+            e.preventDefault();
+        });
     });
 
 
