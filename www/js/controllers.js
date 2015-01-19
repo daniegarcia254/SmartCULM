@@ -22,7 +22,6 @@
         "19:30-21:00","19:30-21:30","20:00-21:00"];
     var seccionTodos = ["ALEMÁN","ÁRABE","CHINO","FRANCÉS","GRIEGO","INGLÉS","ITALIANO","JAPONÉS","PORTUGUÉS","RUSO"];
     var edificioTodos = ["BETANCOURT","ECONOMIA","INTERFACULTADES","INTER II","L.NORMANTE","VETERINARIA","VICERRECTORADO HUESCA"];
-    var profesoresTodos = [];
     var profTodos = JSON.stringify({
         nombre: "all",
         primerApellido: "",
@@ -184,7 +183,7 @@
      * AppCtrl: Controlador principal de la aplicación.
      ***********************************************************************/
     app.controller('AppCtrl', function($scope, $ionicModal, $timeout, $ionicPopup,
-    		$window, $rootScope, GetInfoService, $state, $document) {
+    		$window, $rootScope, GetInfoService, $state) {
 
         //Si no hay datos y no hay error de conexión --> Realiza las llamadas al web service
         if (!$rootScope.primerAcceso) {
@@ -625,7 +624,7 @@
         L.marker([SANF_LAT, SANF_LON]).addTo(map)
             .bindPopup("<div class=\"text-center\"><b>Campus San Francisco</b><br>C/Pedro Cerbuna, 12</div>");
 
-        var popup = L.popup();
+        L.popup();
     });
   
     /*********************************************************************************************************
@@ -652,7 +651,7 @@
         L.marker([RIO1_LAT, RIO1_LON]).addTo(map)
             .bindPopup("<div class=\"text-center\"><b>Campus Rio Ebro, Betancourt</b><br>C/María de Luna, s/n</div>");
 
-        var popup = L.popup();
+        L.popup();
 
         var RIO2_LAT = 41.681527;
         var RIO2_LON = -0.883861;
@@ -668,7 +667,7 @@
         L.marker([RIO2_LAT, RIO2_LON]).addTo(map2)
             .bindPopup("<div class=\"text-center\"><b>Campus Rio Ebro, Lorenzo Normante</b><br>C/María de Luna, s/n</div>");
 
-        var popup = L.popup();
+        L.popup();
     });
   
   /*********************************************************************************************************
@@ -695,7 +694,7 @@
         L.marker([GRAN_LAT, GRAN_LON]).addTo(map)
             .bindPopup("<div class=\"text-center\"><b>Campus Gran Vía, Facultad Económicas</b><br>C/Doctor Cerrada, 1-3</div>");
 
-        var popup = L.popup();
+        L.popup();
     });
   
     /*********************************************************************************************************
@@ -722,7 +721,7 @@
         L.marker([VET_LAT, VET_LON]).addTo(map)
             .bindPopup("<div class=\"text-center\"><b>Campus Veterinaria, Hospital Clínico</b><br>1ª planta, pasillo Admón. de Patología</div>");
 
-        var popup = L.popup();
+        L.popup();
     });
   
     /*********************************************************************************************************
@@ -749,7 +748,7 @@
         L.marker([HUE_LAT, HUE_LON]).addTo(map)
             .bindPopup("<div class=\"text-center\"><b>Campus Huesca</b><br>Ronda Misericordia, 5</div>");
 
-        var popup = L.popup();
+        L.popup();
     });
 
     /*********************************************************************************************************
@@ -776,7 +775,7 @@
         L.marker([TER_LAT, TER_LON]).addTo(map)
             .bindPopup("<div class=\"text-center\"><b>Vicerrectorado Campus Teruel</b><br>C/Ciudad Escolar, s/n</div>");
 
-        var popup = L.popup();
+        L.popup();
     });
 
     //StartFrom filter for the pagination
