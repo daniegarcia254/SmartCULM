@@ -285,12 +285,6 @@
         $scope.notClickedZaragoza = function(){
             $rootScope.clickZaragoza = false;
         };
-
-       /*$($document).on('click', '.external', function (e) {
-            e.preventDefault();
-            window.open(e.target.href, '_system');
-            console.log(e);
-        });*/
     });
 
 
