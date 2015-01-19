@@ -20,7 +20,7 @@
     </author>
     
     <content src="index.html"/>
-  	<access origin="https://culm.unizar.es/*" launch-external="yes" />
+  	<access origin="*culm.unizar.es*" launch-external="yes" />
     
     <!--
         If you do not want any permissions to be added to your app, add the
