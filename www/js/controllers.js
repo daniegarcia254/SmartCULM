@@ -183,8 +183,8 @@
     /**********************************************************************
      * AppCtrl: Controlador principal de la aplicación.
      ***********************************************************************/
-    app.controller('AppCtrl', function($scope, $ionicModal, $timeout, $ionicPopup, 
-    		$window, $rootScope, GetInfoService, $state, $location) {
+    app.controller('AppCtrl', function($scope, $ionicModal, $timeout, $ionicPopup,
+    		$window, $rootScope, GetInfoService, $state, $document) {
 
         //Si no hay datos y no hay error de conexión --> Realiza las llamadas al web service
         if (!$rootScope.primerAcceso) {
@@ -241,7 +241,7 @@
             confirmPopup.then(function(res) {
                 if(res) {
                     $window.open(calendario_URI, '_system');
-                } 
+                }
             });
         };
 
@@ -284,10 +284,10 @@
 
         $scope.notClickedZaragoza = function(){
             $rootScope.clickZaragoza = false;
-        }
+        };
 
-        jQuery(document).delegate('.external', 'click', function (e) {
-            window.open(e.target.href, '_system', 'toolbar=yes');
+        jQuery($document).delegate('.external', 'click', function (e) {
+            $window.open(e.target.href, '_system', 'toolbar=yes');
             e.preventDefault();
         });
     });
@@ -608,7 +608,7 @@
     /*********************************************************************************************************
      * infoSanFranciscoCtrl: Controlador encargado de la sección de información de campus San Francisco
      *********************************************************************************************************/
-    app.controller('infoSanFranciscoCtrl', function($scope, $rootScope, $ionicPopup, $http, $filter, GetInfoService) {
+    app.controller('infoSanFranciscoCtrl', function() {
 
         var MIN_ZOOM = 15;
         var INIT_ZOOM = 17;
@@ -636,7 +636,7 @@
     /*********************************************************************************************************
      * infoRioEbroCtrl: Controlador encargado de la sección de información de campus Río Ebro
      *********************************************************************************************************/
-    app.controller('infoRioEbroCtrl', function($scope, $rootScope, $ionicPopup, $http, $filter, GetInfoService) {
+    app.controller('infoRioEbroCtrl', function() {
 
         var MIN_ZOOM = 15;
         var INIT_ZOOM = 17;
@@ -679,7 +679,7 @@
   /*********************************************************************************************************
    * infoGranViaCtrl: Controlador encargado de la sección de información de Campus Gran Vía
      *********************************************************************************************************/
-    app.controller('infoGranViaCtrl', function($scope, $rootScope, $ionicPopup, $http, $filter, GetInfoService) {
+    app.controller('infoGranViaCtrl', function() {
 
         var MIN_ZOOM = 15;
         var INIT_ZOOM = 17;
@@ -706,7 +706,7 @@
     /*********************************************************************************************************
      * infoVeterinariaCtrl: Controlador encargado de la sección de información de Campus Veterinaria
      *********************************************************************************************************/
-    app.controller('infoVeterinariaCtrl', function($scope, $rootScope, $ionicPopup, $http, $filter, GetInfoService) {
+    app.controller('infoVeterinariaCtrl', function() {
 
         var MIN_ZOOM = 15;
         var INIT_ZOOM = 17;
@@ -733,7 +733,7 @@
     /*********************************************************************************************************
      * infoHuescaCtrl: Controlador encargado de la sección de información de Huesca
      *********************************************************************************************************/
-    app.controller('infoHuescaCtrl', function($scope, $rootScope, $ionicPopup, $http, $filter, GetInfoService) {
+    app.controller('infoHuescaCtrl', function() {
 
         var MIN_ZOOM = 15;
         var INIT_ZOOM = 17;
@@ -760,7 +760,7 @@
     /*********************************************************************************************************
      * infoTeruelCtrl: Controlador encargado de la sección de información de Teruel
      *********************************************************************************************************/
-    app.controller('infoTeruelCtrl', function($scope, $rootScope, $ionicPopup, $http, $filter, GetInfoService) {
+    app.controller('infoTeruelCtrl', function() {
 
         var MIN_ZOOM = 15;
         var INIT_ZOOM = 17;
