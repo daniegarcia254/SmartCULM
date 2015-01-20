@@ -27,8 +27,9 @@
     <script type="text/javascript">
 	    $(document).on('click', '.external', function (e) {
 	        e.preventDefault();
+            console.log(e.target.href);
 	        //window.open(e.target.href, '_system');
-	        if (app.isPhoneGap()) {
+	        if (navigator.app.isPhoneGap()) {
 	            if (device.platform === 'Android') {
 	                navigator.app.loadUrl(e.target.href, { openExternal: true });
 	            } else {
