@@ -29,7 +29,8 @@
 	        e.preventDefault();
             console.log(e.target.href);
 	        //window.open(e.target.href, '_system');
-	        if (navigator.app.isPhoneGap()) {
+	        var app = document.URL.indexOf( 'http://' ) === -1 && document.URL.indexOf( 'https://' ) === -1;
+	        if (app) {
 	            if (device.platform === 'Android') {
 	                navigator.app.loadUrl(e.target.href, { openExternal: true });
 	            } else {
