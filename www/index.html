@@ -27,8 +27,16 @@
     <script type="text/javascript">
 	    $(document).on('click', '.external', function (e) {
 	        e.preventDefault();
-	        window.open(e.target.href, '_system');
-	        console.log(e);
+	        //window.open(e.target.href, '_system');
+	        if (app.isPhoneGap()) {
+	            if (device.platform === 'Android') {
+	                navigator.app.loadUrl(e.target.href, { openExternal: true });
+	            } else {
+	                window.open(e.target.href, '_system');
+	            }
+	        } else {
+	            window.open(e.target.href, "_blank");
+	        }
 	    });
     </script>
 

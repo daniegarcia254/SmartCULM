@@ -20,8 +20,9 @@
     </author>
     
     <content src="index.html"/>
-  	<access origin="http://*" launch-external="yes" />
-	<access origin="https://*" launch-external="yes" />
+  	<!-- <access origin="http://*" launch-external="yes" />
+	<access origin="https://*" launch-external="yes" />-->
+	<access origin="*"/>
     
     <!--
         If you do not want any permissions to be added to your app, add the
