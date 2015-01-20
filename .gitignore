@@ -5,8 +5,8 @@ node_modules/
 platforms/
 .idea/
 build/
-hooks/
-node_modules/
 projectFilesBackup/
 .bowerrc
 bower.json
+.project
+

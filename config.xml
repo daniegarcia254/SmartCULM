@@ -13,10 +13,6 @@
     
   	<author email="gps_e25@googlegroups.com">
       Daniel García Páez
-      Carlos Martinez Castillero
-      David Recuenco Gadea
-      Guillermo Ginestra
-      Alberto Berbel Aznar
     </author>
     
     <content src="index.html"/>
@@ -31,11 +27,14 @@
     -->
     <preference name="permissions"                value="none"/>
     
-    
-    
      <!-- Core plugins -->
     <gap:plugin name="org.apache.cordova.inappbrowser" />
     <gap:plugin name="org.apache.cordova.device" />
+    
+    <!--<feature name="InAppBrowser">
+  		<param name="ios-package" value="CDVInAppBrowser" />
+  		<param name="android-package" value="org.apache.cordova.inappbrowser.InAppBrowser" />
+	</feature>-->
     
     <!-- Define app icon for each platform. -->
     <icon src="img/apk_icon.png" />

@@ -26,11 +26,7 @@
     <script src="lib/jquery-2.1.3.min.js"></script>
     <script type="text/javascript">
 	    $(document).on('click', '.external', function (e) {
-	        e.preventDefault();
-            console.log(e.target.href);
-	        //window.open(e.target.href, '_system');
-	        var app = document.URL.indexOf( 'http://' ) === -1 && document.URL.indexOf( 'https://' ) === -1;
-	        if (app) {
+	        if (app.isPhoneGap()) {
 	            if (device.platform === 'Android') {
 	                navigator.app.loadUrl(e.target.href, { openExternal: true });
 	            } else {
