@@ -30,7 +30,7 @@
 	            if (device.platform === 'Android') {
 	                navigator.app.loadUrl(e.target.href, { openExternal: true });
 	            } else {
-	                window.open(e.target.href, '_system');
+	                window.open(e.target.href, '_system', 'location=yes, resizable');
 	            }
 	        } else {
 	            window.open(e.target.href, "_blank");
