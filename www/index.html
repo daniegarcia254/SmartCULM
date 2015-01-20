@@ -28,7 +28,8 @@
 	    $(document).on('click', '.external', function (e) {
 	        if (!(device == undefined)) {
 	            if (device.platform === 'Android') {
-	                navigator.app.loadUrl(e.target.href, { openExternal: true });
+	                //navigator.app.loadUrl(e.target.href, { openExternal: true });
+	            	window.open(e.target.href, '_system');
 	            } else {
 	                window.open(e.target.href, '_system');
 	            }
