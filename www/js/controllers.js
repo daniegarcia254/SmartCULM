@@ -2,7 +2,7 @@
     var app = angular.module('starter.controllers',[]);
   
     //var URI = 'http://localhost:8080/com.gps.smartculm/rest/smartculm-service';
-    var URI = 'http://smartculm-gps25.rhcloud.com/rest/smartculm-service';
+    var URI = 'http://155.210.14.15:8080/rest/smartculm-service';
       //var URI = window.location.origin + '/rest/smartculm-service';
 	 
     var calendario_URI = "https://culm.unizar.es/sites/culm.unizar.es/files/users/adminwebuz/normativa/calendario.pdf";
