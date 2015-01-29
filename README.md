@@ -1,7 +1,7 @@
 SmartCULM
 =========
 
-**Mobile && Web app for the CULM (Centro Universitario de Lenguas Modernas de Zaragoza**  
+**Mobile _&&_ Web app for the CULM (Centro Universitario de Lenguas Modernas de Zaragoza)**  
 You can download and use both versions of the app in the [official CULM website](http://culm.unizar.es/smartculm).
 - **_Android apk_** [download link](https://www.dropbox.com/s/ei69gzmsjk7p8ks/SmartCULM.apk?dl=0)
 - **_Web app_** version: [http://www.unizar.es/idiomas/movil](http://www.unizar.es/idiomas/movil)
