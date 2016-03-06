@@ -7,8 +7,8 @@ import java.sql.SQLException;
 public class ConnectionManager {
 	private static String url = "jdbc:oracle:thin:@//155.210.14.15:1521/minos.oracle";    
 	private static String driverName = "oracle.jdbc.driver.OracleDriver";   
-	private static String username = "movil";   
-	private static String password = "AppMovil14";
+	private static String username = "";   
+	private static String password = "";
 	private static Connection con;
 
 	public static Connection getConnection() {
