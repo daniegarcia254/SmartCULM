@@ -1,3 +1,5 @@
-.gradle/
+.settings/
 build/
-webapps/
+target/
+.classpath
+.project
