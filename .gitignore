@@ -1,5 +1,4 @@
-.settings/
-build/
+.idea/
+lib/
+out/
 target/
-.classpath
-.project
