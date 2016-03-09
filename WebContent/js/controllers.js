@@ -4,7 +4,7 @@
     //var URI = 'http://localhost:8080/smartculm/api/smartculm-service';
     var URI = window.location.origin + '/api/smartculm-service';
 	 
-    var calendario_URI = "https://culm.unizar.es/sites/culm.unizar.es/files/users/adminwebuz/normativa/calendario.pdf";
+    var calendario_URI = "https://culm.unizar.es/sites/culm.unizar.es/files/users/adminwebuz/convocatorias/calendario_culm_2015-16.pdf";
 
     /***********************************************************************************************
      * VARIABLES GLOBALES: Inicialización de variables globales donde se guardan los datos recogidos
