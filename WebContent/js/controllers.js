@@ -1,8 +1,8 @@
 ﻿(function(){
     var app = angular.module('starter.controllers',[]);
 
-    //var URI = 'http://localhost:8080/smartculm/api/smartculm-service';
-    var URI = window.location.origin + '/api/smartculm-service';
+    var URI = 'http://localhost:8080/smartculm/api/smartculm-service';
+    //var URI = 'http://www.danigarcia-dev.com:8080/smartculm/api/smartculm-service';
 	 
     var calendario_URI = "https://culm.unizar.es/sites/culm.unizar.es/files/users/adminwebuz/convocatorias/calendario_culm_2015-16.pdf";
 
