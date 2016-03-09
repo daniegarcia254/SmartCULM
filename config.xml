@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<widget id="com.ionicframework.myapp377389" 
+		version="0.0.1" 
+		xmlns="http://www.w3.org/ns/widgets" 
+		xmlns:cdv="http://cordova.apache.org/ns/1.0"
+		xmlns:gap="http://phonegap.com/ns/1.0">
+		
+	<name>SmartCULM</name>
+  
+	<description>
+        An application oriented for mobile devices. Allows to access to all the basic and most important info of the CULM (Centro Universitario de Lenguas Modernas de Zaragoza): noticias, incidencias, horarios, profesores, calendario académico, información...
+    </description>
+    
+  	<author email="gps_e25@googlegroups.com">
+      Daniel García Páez
+    </author>
+    
+    <content src="index.html"/>
+  	<!-- <access origin="http://*" launch-external="yes" />
+	<access origin="https://*" launch-external="yes" />-->
+	<access origin="*"/>
+    
+    <!--
+        If you do not want any permissions to be added to your app, add the
+        following tag to your config.xml; you will still have the INTERNET
+        permission on your app, which PhoneGap requires.
+    -->
+    <preference name="permissions"                value="none"/>
+    
+     <!-- Core plugins -->
+    <gap:plugin name="org.apache.cordova.inappbrowser" />
+    <gap:plugin name="org.apache.cordova.device" />
+    
+    <!--<feature name="InAppBrowser">
+  		<param name="ios-package" value="CDVInAppBrowser" />
+  		<param name="android-package" value="org.apache.cordova.inappbrowser.InAppBrowser" />
+	</feature>-->
+    
+    <!-- Define app icon for each platform. -->
+    <icon src="img/apk_icon.png" />
+</widget>
