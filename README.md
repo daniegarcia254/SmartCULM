@@ -12,10 +12,10 @@ It's necessary to have one of the latest _Android_ versions and _Chrome_, _Firef
 -------------------------------------------------------------------------------------------------
 
 #####Directories hierarchy:
-- [RESTful Web Service](https://github.com/daniegarcia254/smartculm_test/tree/master/src/com/gps/service)
+- [RESTful Web Service](https://github.com/daniegarcia254/SmartCULM/tree/master/src/com/gps/service)
 - [Web Scrapping Service](https://github.com/daniegarcia254/SmartCULM/tree/master/src/com/gps/scrapping/culm)
 - [Oracle BD connection and query service](https://github.com/daniegarcia254/SmartCULM/tree/master/src/com/gps/bd/minos)
-- [WebApp](https://github.com/daniegarcia254/SmartCULM/tree/master/www)
+- [WebApp](https://github.com/daniegarcia254/SmartCULM/tree/master/WebContent)
 
 In a few words: the WebApp asks for the data to the web service through AJAX calls to the REST service, which will return the information, either from an _Oracle DB_ or through _web-scraping_.
 
@@ -28,5 +28,5 @@ The appp has been developed with:
   - [AngularJS](https://angularjs.org/)
   - [PhoneGap](https://build.phonegap.com/) in order to create the _Android_ version
 - Server side:
-  - [JAX-RS](https://jax-rs-spec.java.net/)
+  - [JAX-RS](https://jax-rs-spec.java.net/) using Jersey libraries
   - [Jsoup library for web-scraping](http://jsoup.org/)
