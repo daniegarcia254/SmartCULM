@@ -27,7 +27,7 @@ import com.gps.scrapping.culm.Scrapper;
  *
  */
 
-@Path("service")
+@Path("/smartculm-service")
 public class SmartCulmService {
 	
 	/**
