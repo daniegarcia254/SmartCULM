@@ -31,7 +31,10 @@ The appp has been developed with:
   - [JAX-RS](https://jax-rs-spec.java.net/) using Jersey libraries
   - [Jsoup library for web-scraping](http://jsoup.org/)
 
+-------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------
 
+####Basic Configuration
 Project is prepared to be build, compiled and deployed either with **Eclipse IDE** or **IntellJ Idea**. You have available a branch for each of the IDEs mentioned.
 
 The needed libraries are included in the [pom.xml](https://github.com/daniegarcia254/SmartCULM/tree/master/pom.xml) file, so ***Maven*** should be used. Those libraries should be in the dir *WebContent/WEB-INF/lib*.
