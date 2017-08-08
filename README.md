@@ -11,7 +11,8 @@ It's necessary to have one of the latest _Android_ versions and _Chrome_, _Firef
 -------------------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------------
 
-#####Directories hierarchy:
+#### Directories hierarchy:
+
 - [RESTful Web Service](https://github.com/daniegarcia254/SmartCULM/tree/master/src/com/gps/service)
 - [Web Scrapping Service](https://github.com/daniegarcia254/SmartCULM/tree/master/src/com/gps/scrapping/culm)
 - [Oracle BD connection and query service](https://github.com/daniegarcia254/SmartCULM/tree/master/src/com/gps/bd/minos)
@@ -34,7 +35,8 @@ The appp has been developed with:
 -------------------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------------
 
-####Basic Configuration
+### Basic Configuration
+
 Project is prepared to be build, compiled and deployed either with **Eclipse IDE** or **IntellJ Idea**. You have available a branch for each of the IDEs mentioned.
 
 The needed libraries are included in the [pom.xml](https://github.com/daniegarcia254/SmartCULM/tree/master/pom.xml) file, so ***Maven*** should be used. Those libraries should be placed in the directory *WebContent/WEB-INF/lib*.
