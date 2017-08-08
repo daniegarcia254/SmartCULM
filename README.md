@@ -3,7 +3,7 @@ SmartCULM
 
 **Mobile _&&_ Web app for the CULM (Centro Universitario de Lenguas Modernas de Zaragoza)**  
 You can download and use both versions of the app in the [official CULM website](http://culm.unizar.es/smartculm).
-- **_Android apk_** [download link](https://www.dropbox.com/s/ei69gzmsjk7p8ks/SmartCULM.apk?dl=0)
+- **_Android apk_** [download link](https://www.dropbox.com/s/ei69gzmsjk7p8ks/SmartCULM.apk?dl=0) (currently unavailable)
 - **_Web app_** version: [http://www.unizar.es/idiomas/movil](http://www.unizar.es/idiomas/movil)
 
 It's necessary to have one of the latest _Android_ versions and _Chrome_, _Firefox_, _Safari_, etc. versions.
@@ -18,7 +18,7 @@ It's necessary to have one of the latest _Android_ versions and _Chrome_, _Firef
 - [Oracle BD connection and query service](https://github.com/daniegarcia254/SmartCULM/tree/master/src/com/gps/bd/minos)
 - [WebApp](https://github.com/daniegarcia254/SmartCULM/tree/master/WebContent)
 
-In a few words: the WebApp asks for the data to the web service through AJAX calls to the REST service, which will return the information, either from an _Oracle DB_ or through _web-scraping_.
+In a few words: the WebApp asks for the data to the REST API, which will return the information, either from an _Oracle DB_ or through _web-scraping_.
 
 -------------------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------------
